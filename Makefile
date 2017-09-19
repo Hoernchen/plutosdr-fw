@@ -47,6 +47,8 @@ build/uboot-env.bin: build/uboot-env.txt
 linux/arch/arm/boot/zImage:
 	make -C linux ARCH=arm zynq_pluto_defconfig
 	make -C linux -j $(NCORES) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) zImage UIMAGE_LOADADDR=0x8000
+	make -C linux -j $(NCORES) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) modules
+	make -C linux -j $(NCORES) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) INSTALL_MOD_PATH=${PWD}/buildroot/output/target modules_install
 
 .PHONY: linux/arch/arm/boot/zImage
 
