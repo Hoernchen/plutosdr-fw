@@ -1,6 +1,8 @@
 # *modified* plutosdr firmware
  This experimental firmware uses a custom library on the host side and a kernel driver on the plutosdr itself (no libiio!)
 
+requires https://github.com/Hoernchen/libosmoplutosdr + http://cgit.osmocom.org/gr-osmosdr/ plutokernel branch
+
 * Build Instructions
  ```bash
  
